@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Battleship</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.icon-large.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+        <div class="page-header">
+            <h1>Battleship <small>Sink your friends.</small></h1>
+        </div>
+
+
+        <div id="optionsScreen" class="screen">
+            <form id="optionsForm" class="form-inline">
+                <div class="form-group">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Player Options</h3>
+                        </div>
+                        <div class="panel-body">
+                            <label class='nameInputLabel' for="playerOneName">Player One Name</label>
+                            <input type="text" class="form-control nameInput" id="playerOneName" placeholder="Captain Fussypants">
+                            <label class='nameInputLabel' for="playerTwoName">Player Two Name</label>
+                            <input type="text" class="form-control nameInput" id="playerTwoName" placeholder="Le Marquis d'Argh">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Game Options</h3>
+                    </div>
+                    <div class="panel-body" id="gameOptions">
+
+                    </div>
+                </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Ship Placement</h3>
+                    </div>
+                    <div class="panel-body" id="shipPlacements">
+
+                        <label class="biglabel" for="player1Placements">Player 1 Ships</label>
+
+                        <div id="player1Placements">
+                        </div>
+                        <label class="biglabel" for="player2Placements">Player 2 Ships</label>
+
+                        <div id="player2Placements">
+                        </div>
+                    </div>
+
+                </div>
+                <div id="buttonBox">
+                    <button id="btnSaveOptions" type="submit" class="btn primary-button ">Start Game</button>
+
+                </div>
+
+
+
+            </form>      
+
+
+        </div>
+
+        <div id="playScreen" class="screen">
+            <h2>Current Player is: <span id="playerNumber"></span></h2>
+
+            <div id='boards2'>
+
+                <div  class="boardContainer2">
+                    <h3> The Game Board </h3>
+                    <div id="opponentboard" class="board2"></div>
+                </div>
+                <div  class="boardContainer2">
+                    <h3> Your pieces (hidden)</h3>
+                    <div id="gameBoard" class="board2"></div>
+                    <div id="showmetext2">
+                        If you want to see how your pieces are faring, have your opponent 
+                        look away and click the "Hide/Show Your Board" button below. 
+                        This will show the location of your pieces, so don't let them see!
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttonArea">
+
+                <button id="toggleBoardVis"  class="primary-button">Hide/Show Your Board</button>
+                <button id="doneButton" class=" secondary-button-with-outline">Turn Over</button>
+
+            </div>
+
+        </div>
+        <div id="winnerScreen" class="screen">
+            <h2 id="winner">You Win!</h2>  
+            <button id="switchToOptionsButton" type="submit" class="primary-button">Start Over!</button>
+        </div>
+        <div id="messageArea">
+            <div id="message"></div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Read my important words!</h4>
+                    </div>
+                    <div class="modal-body" >
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <audio id='audio-bjbattleship' preload="auto" >
+            <source src="audio/bjbattleship.mp3" type="audio/mpeg">
+        </audio>
+        <audio id='audio-explosion' preload="auto" >
+            <source src="audio/explosion.mp3" type="audio/mpeg">
+        </audio>
+        <audio id='audio-you-won'  preload="auto">
+            <source src="audio/you-won.wav" type="audio/mpeg">
+        </audio>
+        <audio id='audio-trombone' preload="auto" >
+            <source src="audio/trombone.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id='audio-cricket' preload="auto" >
+            <source src="audio/cricket.wav" type="audio/mpeg">
+        </audio>        
+        <audio id='audio-swoosh' preload="auto" >
+            <source src="audio/swoosh.wav" type="audio/mpeg">
+        </audio>
+        <div id="credits"><a href="http://glyphicons.com">glyphicons by glyphicons.com</a></div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>');</script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/battleship.js" type="text/javascript"></script>
+        <script src="js/page.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
